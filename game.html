@@ -66,7 +66,7 @@
         }else if (playerSelection == computerSelection) {
             roundWinner = "It is a Tie!";
         }
-        console.log(("Player Score: " + playerScore)) + ("Computer Score: " + computerScore);
+        console.log((("Player Score: " + playerScore)) +  ("    Computer Score: " + computerScore));
 
         return roundWinner;
     }
@@ -82,25 +82,25 @@
 
             // console.log("Round " + round);
             console.log("Round " + round + ": " + playRound(playerSelection, computerSelection));
-
-            
         }
-        // Add round counter and add winner
+        if (getComputerScore() > getPlayerScore()) {
+            console.log("Computer Wins the Game!");
+        }else if (getPlayerScore() > getComputerScore()) {
+            console.log("You Win the Game!");
+        }else {
+            console.log("The Game is a Tie!");
+        }
 
     }
-
+    const getPlayerScore = () => playerScore;
     // function getPlayerScore(){
     //     return playerScore;
     // }
 
+    const getComputerScore = () => computerScore;
     // function getComputerScore(){
     //     return ComputerScore;
     // }
-
-    const getComputerScore = () => ComputerScore;
-    const getPlayerScore = () => playerScore;
-
-
 
 
     let playerScore = 0;
