@@ -65,16 +65,28 @@
 
     // A game of 5 total Rounds
     function game() {
-        
+        for (let i = 1; i < 6; i++){
+            let computerSelection = getComputerChoice();
+            let playerSelection = prompt("Pick your hand");
+            let round = i;
+
+            // console.log("Round " + round);
+            console.log("Round " + round + ": " + playRound(playerSelection, computerSelection));
+        }
+
     }
 
-    const playerSelection = "rock";
-    const computerSelection = getComputerChoice();
 
-    console.log("Player: " + playerSelection);
-    console.log("Computer: " + computerSelection);
+    // const playerSelection = "rock";
+    // const computerSelection = getComputerChoice();
 
-    console.log(playRound(playerSelection, computerSelection));
+    // console.log("Player: " + playerSelection);
+    // console.log("Computer: " + computerSelection);
+
+    // console.log(playRound(playerSelection, computerSelection));
+
+    game();
+
     
 </script>
     
