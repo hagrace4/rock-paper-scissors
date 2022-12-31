@@ -33,11 +33,14 @@
     function playRound(playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase(); // Convert player input to lower case
 
+
         // When player selects Rock
         if (playerSelection == "rock" && computerSelection == "paper") {
             roundWinner = "You Lose! Paper beats Rock";
+            computerScore += 1;
         }else if (playerSelection == "rock" && computerSelection == "scissors") {
             roundWinner = "You Win! Rock beats Scissors";
+            playerScore += 1;
         }else if (playerSelection == computerSelection) {
             roundWinner = "It is a Tie!";
         }
@@ -45,8 +48,10 @@
         // When player selects Paper
         if (playerSelection == "paper" && computerSelection == "rock") {
             roundWinner = "You Win! Paper beats Rock";
+            playerScore += 1;
         }else if (playerSelection == "paper" && computerSelection == "scissors") {
             roundWinner = "You Lose! Scissors beats Paper";
+            computerScore += 1;
         }else if (playerSelection == computerSelection) {
             roundWinner = "It is a Tie!";
         }
@@ -54,17 +59,22 @@
         // When player selects Scissors
         if (playerSelection == "scissors" && computerSelection == "paper") {
             roundWinner = "You Win! Scissors beats Paper";
+            playerScore += 1;
         }else if (playerSelection == "scissors" && computerSelection == "rock") {
             roundWinner = "You Lose! Rock beats Scissors";
+            computerScore += 1;
         }else if (playerSelection == computerSelection) {
             roundWinner = "It is a Tie!";
         }
+        console.log(("Player Score: " + playerScore)) + ("Computer Score: " + computerScore);
 
         return roundWinner;
     }
 
     // A game of 5 total Rounds
     function game() {
+
+
         for (let i = 1; i < 6; i++){
             let computerSelection = getComputerChoice();
             let playerSelection = prompt("Pick your hand");
@@ -72,19 +82,18 @@
 
             // console.log("Round " + round);
             console.log("Round " + round + ": " + playRound(playerSelection, computerSelection));
+
+            
         }
+        // Add round counter and add winner
 
     }
 
 
-    // const playerSelection = "rock";
-    // const computerSelection = getComputerChoice();
 
-    // console.log("Player: " + playerSelection);
-    // console.log("Computer: " + computerSelection);
 
-    // console.log(playRound(playerSelection, computerSelection));
-
+    let playerScore = 0;
+    let computerScore = 0;
     game();
 
     
