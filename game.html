@@ -10,20 +10,20 @@
 
 <body>
 
-  <button id="rockButton">Rock</button>
-  <button id="paperButton">Paper</button>
-  <button id="scissorsButton">Scissors</button>
+  <button id='rockButton'>Rock</button>
+  <button id='paperButton'>Paper</button>
+  <button id='scissorsButton'>Scissors</button>
 
   <script>
 
-    const rockBtn = document.querySelector('rockButton');
-    rockBtn.addEventListener("click", playRound('rock', getComputerChoice));
+    const rockBtn = document.querySelector('#rockButton');
+    rockBtn.addEventListener("click", () => playRound('rock', getComputerChoice()));
 
-    const paperBtn = document.querySelector('paperButton');
-    paperBtn.addEventListener("click",playRound('paper',getComputerChoice));
+    const paperBtn = document.querySelector('#paperButton');
+    paperBtn.addEventListener("click", () => playRound('paper', getComputerChoice()));
 
-    const scissorsBtn = document.querySelector('scissorsButton');
-    scissorsBtn.addEventListener("click",playRound('scissors',getComputerChoice));
+    const scissorsBtn = document.querySelector('#scissorsButton');
+    scissorsBtn.addEventListener("click", () => playRound('scissors', getComputerChoice()));
 
 
     // Function to randomly generate Computer's Choice
@@ -91,13 +91,13 @@
     function game() {
 
 
-      for (let i = 1; i < 99; i++) {
+      for (let i = 1; i < 6; i++) {
         let computerSelection = getComputerChoice();
         //let playerSelection = prompt("Pick your hand");
         let round = i;
 
         // console.log("Round " + round);
-        console.log("Round " + round + ": " + playRound(playerSelection, computerSelection));
+        //console.log("Round " + round + ": " + playRound(playerSelection, computerSelection));
       }
       if (getComputerScore() > getPlayerScore()) {
         console.log("Computer Wins the Game!");
