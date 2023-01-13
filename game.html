@@ -19,6 +19,7 @@
   <div id="resultsDiv">
     <div id='matchResult'></div>
     <div id='results'></div>
+    <div id="reset"></div>
   </div>
   <script>
 
@@ -34,6 +35,10 @@
 
     const results = document.querySelector('#results');
     const matchResult = document.querySelector('#matchResult');
+
+    const reset = document.querySelector('reset')
+    
+    
 
 
 
@@ -96,11 +101,11 @@
       results.innerHTML = (("Player Score: " + playerScore)) + ("    Computer Score: " + computerScore);
       if (playerScore == 5) {
         results.innerHTML += "<br>" + ("Player Wins!");
-        resetGame();
+        
       }
       if (computerScore == 5) {
         results.innerHTML += "<br>" + ("Computer Wins!");
-        resetGame();
+        
       }
     }
 
@@ -114,8 +119,10 @@
       }
     }
 
-    function resetButton {
-      
+    function resetButton() {
+
+
+
     }
 
 
