@@ -10,13 +10,16 @@
 
 <body>
 
-  <button id='rockButton'>Rock</button>
-  <button id='paperButton'>Paper</button>
-  <button id='scissorsButton'>Scissors</button>
+  <div id="buttons">
+    <button id='rockButton'>Rock</button>
+    <button id='paperButton'>Paper</button>
+    <button id='scissorsButton'>Scissors</button>
+  </div>
 
-  <div id='matchResult'></div>
-  <div id='results'></div>
-
+  <div id="resultsDiv">
+    <div id='matchResult'></div>
+    <div id='results'></div>
+  </div>
   <script>
 
     const rockBtn = document.querySelector('#rockButton');
@@ -55,7 +58,7 @@
 
     // Function to play a single Round
     function playRound(playerSelection, computerSelection) {
-      
+
       // When player selects Rock
       if (playerSelection == "rock" && computerSelection == "paper") {
         matchResult.innerHTML = "You Lose! Paper beats Rock";
@@ -91,18 +94,33 @@
 
       // Game of 5 rounds
       results.innerHTML = (("Player Score: " + playerScore)) + ("    Computer Score: " + computerScore);
-      if (playerScore == 5){
+      if (playerScore == 5) {
         results.innerHTML += "<br>" + ("Player Wins!");
+        resetGame();
       }
       if (computerScore == 5) {
         results.innerHTML += "<br>" + ("Computer Wins!");
+        resetGame();
       }
     }
 
-    
+    function resetGame() {
+      if (computerScore == 5 || playerScore == 5) {
+        matchResult.innerHTML = "";
+        results.innerHTML = "";
+        playerScore = 0;
+        computerScore = 0;
+
+      }
+    }
+
+    function resetButton {
+      
+    }
 
 
-    
+
+
     const getPlayerScore = () => playerScore;
     const getComputerScore = () => computerScore;
 
