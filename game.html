@@ -19,7 +19,9 @@
   <div id="resultsDiv">
     <div id='matchResult'></div>
     <div id='results'></div>
-    <div id="reset"></div>
+    <div id="reset">
+      <button id="resetBtn">Reset</button>
+    </div>
   </div>
   <script>
 
@@ -36,9 +38,10 @@
     const results = document.querySelector('#results');
     const matchResult = document.querySelector('#matchResult');
 
-    const reset = document.querySelector('reset')
+    const reset = document.querySelector('#reset');
 
-
+    const resetBtn = document.querySelector('#resetBtn');
+    reset.addEventListener("click", () => resetGame());
 
 
 
@@ -120,11 +123,15 @@
         playerScore = 0;
         computerScore = 0;
 
+        rockBtn.disabled = false;
+        paperBtn.disabled = false;
+        scissorsBtn.disabled = false;
+
       }
     }
 
 
-    
+
 
 
 
