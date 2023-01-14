@@ -37,8 +37,8 @@
     const matchResult = document.querySelector('#matchResult');
 
     const reset = document.querySelector('reset')
-    
-    
+
+
 
 
 
@@ -101,11 +101,15 @@
       results.innerHTML = (("Player Score: " + playerScore)) + ("    Computer Score: " + computerScore);
       if (playerScore == 5) {
         results.innerHTML += "<br>" + ("Player Wins!");
-        
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
       }
       if (computerScore == 5) {
         results.innerHTML += "<br>" + ("Computer Wins!");
-        
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
       }
     }
 
@@ -119,11 +123,8 @@
       }
     }
 
-    function resetButton() {
 
-
-
-    }
+    
 
 
 
